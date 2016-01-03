@@ -1888,10 +1888,10 @@ if($mybb->input['action'] == "forumsubscriptions")
 			$lastposter = $forum['lastposter'];
 			$lastpost_profilelink = build_profile_link($lastposter, $forum['lastposteruid']);
 			$full_lastpost_subject = $lastpost_subject = htmlspecialchars_uni($forum['lastpostsubject']);
-			if(my_strlen($lastpost_subject) > 25)
-			{
-				$lastpost_subject = my_substr($lastpost_subject, 0, 25) . "...";
-			}
+			//if(my_strlen($lastpost_subject) > 25)
+			//{
+			//	$lastpost_subject = my_substr($lastpost_subject, 0, 25) . "...";
+			//}
 			$lastpost_link = get_thread_link($forum['lastposttid'], 0, "lastpost");
 			eval("\$lastpost = \"".$templates->get("forumbit_depth2_forum_lastpost")."\";");
 		}
