@@ -112,7 +112,7 @@ if($mybb->settings['showwol'] != 0 && $mybb->usergroup['canviewonline'] != 0)
 		elseif(my_strpos($user['sid'], 'bot=') !== false && $spiders[$botkey])
 		{
 			// The user is a search bot.
-			$onlinemembers .= $comma.format_name($spiders[$botkey]['name'], $spiders[$botkey]['usergroup']);
+			$onlinemembers .= $comma.format_name($spiders[$botkey]['name'], $spiders[$botkey]['usergroup'], 13);
 			$comma = $lang->comma;
 			++$botcount;
 		}

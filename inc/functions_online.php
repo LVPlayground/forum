@@ -1148,7 +1148,7 @@ function build_wol_row($user)
 	// We have a bot
 	elseif(!empty($user['bot']))
 	{
-		$online_name = format_name($user['bot'], $user['usergroup']);
+		$online_name = format_name($user['bot'], $user['usergroup'], 13);
 	}
 	// Otherwise we've got a plain old guest
 	else
