@@ -1,3 +1,5 @@
 .htaccess
+admin/backups
+cache
 inc/config.php
 uploads
