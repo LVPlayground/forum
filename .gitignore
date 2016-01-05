@@ -37,3 +37,6 @@ Thumbs.db
 
 # Generic git files
 *.orig
+
+# Not needed for LVP
+install
