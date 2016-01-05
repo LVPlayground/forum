@@ -112,7 +112,7 @@ if($mybb->settings['showwol'] != 0 && $mybb->usergroup['canviewonline'] != 0)
 		elseif(my_strpos($user['sid'], 'bot=') !== false && $spiders[$botkey])
 		{
 			// The user is a search bot.
-			$onlinemembers .= $comma.format_name($spiders[$botkey]['name'], $spiders[$botkey]['usergroup']);
+			$onlinemembers .= $comma.format_name($spiders[$botkey]['name'], $spiders[$botkey]['usergroup'], 13);
 			$comma = $lang->comma;
 			++$botcount;
 		}
@@ -386,5 +386,6 @@ $forums = $forum_list['forum_list'];
 
 $plugins->run_hooks('index_end');
 
+$header = str_replace('<navigation>', '', $header);
 eval('$index = "'.$templates->get('index').'";');
 output_page($index);

@@ -1363,6 +1363,9 @@ class postParser
 			case "liveleak":
 				$id = $input['i']; // http://www.liveleak.com/view?i=123
 				break;
+			case "twitch":
+				$id = $path[1]; // http://www.twitch.tv/esl_csgo
+				break;
 			case "yahoo":
 				$id = $path[1]; // http://xy.screen.yahoo.com/fds-123.html
 				// Support for localized portals

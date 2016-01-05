@@ -448,6 +448,7 @@ $(document).ready(function($) {
 					facebook: '<iframe src="{url}" width="625" height="350" frameborder="0" data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>',
 					liveleak: '<iframe width="500" height="300" src="{url}" frameborder="0" data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>',
 					metacafe: '<iframe src="{url}" width="440" height="248" frameborder=0 data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>',
+					twitch: '<object type="application/x-shockwave-flash" height="323" width="520" data="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel={url}" bgcolor="#000000" data-mybb-vt="{type}" data-mybb-vsrc="{src}"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" /><param name="flashvars" value="hostname=www.twitch.tv&amp;channel={url}&amp;auto_play=false&amp;start_volume=25" /></object>',
 					veoh: '<iframe src="{url}" width="410" height="341" frameborder="0" data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>',
 					vimeo: '<iframe src="{url}" width="500" height="281" frameborder="0" data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>',
 					youtube: '<iframe width="560" height="315" src="{url}" frameborder="0" data-mybb-vt="{type}" data-mybb-vsrc="{src}"></iframe>'
@@ -472,6 +473,10 @@ $(document).ready(function($) {
 					case 'metacafe':
 						matches = content.match(/metacafe\.com\/watch\/([^\/]+)/);
 						url     = matches ? 'http://www.metacafe.com/embed/' + matches[1] : false;
+						break;
+					case 'twitch':
+						matches = content.match(/twitch\.tv\/([^\/]+)/);
+						url     = matches ? matches[1] : false;
 						break;
 					case 'veoh':
 						matches = content.match(/veoh\.com\/watch\/([^\/]+)/);
@@ -509,18 +514,19 @@ $(document).ready(function($) {
 				'<div>' +
 					'<label for="videotype">' + editor._('Video Type:') + '</label> ' +
 					'<select id="videotype">' +
+						'<option value="youtube">' + editor._('Youtube') + '</option>' +
 						'<option value="dailymotion">' + editor._('Dailymotion') + '</option>' +
 						'<option value="facebook">' + editor._('Facebook') + '</option>' +
 						'<option value="liveleak">' + editor._('LiveLeak') + '</option>' +
 						'<option value="metacafe">' + editor._('MetaCafe') + '</option>' +
+						'<option value="twitch">' + editor._('Twitch') + '</option>' +
 						'<option value="veoh">' + editor._('Veoh') + '</option>' +
 						'<option value="vimeo">' + editor._('Vimeo') + '</option>' +
-						'<option value="youtube">' + editor._('Youtube') + '</option>' +
 					'</select>'+
 				'</div>' +
 				'<div>' +
 					'<label for="link">' + editor._('Video URL:') + '</label> ' +
-					'<input type="text" id="videourl" value="http://" />' +
+					'<input type="text" id="videourl" value="https://" />' +
 				'</div>' +
 				'<div><input type="button" class="button" value="' + editor._('Insert') + '" /></div>'
 			);

@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'GraublauWeb';
+	src: url('/assets/GrauBlau.eot');
+	src: local('Graublau Web'), 
+             local('GraublauWeb-Regular'), 
+             local('Graublau'), 
+             url('/assets/GrauBlau.woff') format('woff'), 
+             url('/assets/GrauBlau.ttf')  format('truetype');
+}
+
